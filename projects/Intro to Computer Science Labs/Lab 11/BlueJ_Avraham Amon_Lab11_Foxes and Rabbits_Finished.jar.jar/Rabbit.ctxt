@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=randomAge\ field\ location
+comment0.target=Rabbit(boolean,\ Field,\ Location)
+comment0.text=\r\n\ Create\ a\ new\ rabbit.\ A\ rabbit\ may\ be\ created\ with\ age\r\n\ zero\ (a\ new\ born)\ or\ with\ a\ random\ age.\r\n\ \r\n\ @param\ randomAge\ If\ true,\ the\ rabbit\ will\ have\ a\ random\ age.\r\n\ @param\ field\ The\ field\ currently\ occupied.\r\n\ @param\ location\ The\ location\ within\ the\ field.\r\n
+comment1.params=newAnimals
+comment1.target=void\ act(java.util.List)
+comment1.text=\r\n\ This\ is\ what\ the\ rabbit\ does\ most\ of\ the\ time\ -\ it\ runs\ \r\n\ around.\ Sometimes\ it\ will\ breed\ or\ die\ of\ old\ age.\r\n\ @param\ newRabbits\ A\ list\ to\ return\ newly\ born\ rabbits.\r\n
+comment2.params=
+comment2.target=int\ getMaxAge()
+comment2.text=\r\n\ Returns\ the\ Max\ Age\ of\ Rabbit.\r\n\ @return\ The\ Rabbit's\ max\ age\r\n
+comment3.params=
+comment3.target=int\ getBreedingAge()
+comment3.text=\r\n\ Returns\ the\ breeding\ age\ of\ the\ rabbit.\r\n\r\n\ @return\ The\ rabbit's\ breeding\ age\r\n
+comment4.params=
+comment4.target=double\ getBreedingProbability()
+comment4.text=\r\n\ Returns\ the\ breeding\ probablity\ for\ rabbits.\r\n\r\n\ @return\ The\ rabbit's\ breeding\ probablity\r\n
+comment5.params=
+comment5.target=int\ getMaxLitterSize()
+comment5.text=\r\n\ Returns\ the\ rabbit's\ max\ litter\ size.\r\n\r\n\ @return\ The\ rabbit's\ max\ litter\ size\r\n
+comment6.params=field\ location
+comment6.target=Animal\ makeYoung(Field,\ Location)
+comment6.text=\r\n\ Creates\ a\ new\ born\ animal\ which\ in\ this\ case\ is\ \r\n\ a\ rabbit.\r\n\r\n\ @param\ field\ The\ field\ currently\ occupied\r\n\ @param\ location\ The\ location\ within\ the\ field\r\n\ @return\ The\ new\ baby\ rabbit\r\n
+numComments=7

@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=
+comment0.target=MapTester()
+comment0.text=\r\n\ Create\ a\ Phonebook\r\n
+comment1.params=name\ number
+comment1.target=void\ enterNumber(java.lang.String,\ java.lang.String)
+comment1.text=\r\n\ Enters\ name\ and\ number\ into\ the\ phonebook.\r\n\r\n\ @param\ name\ The\ name\ of\ the\ person.\r\n\ @param\ number\ The\ number\ of\ the\ person.\r\n
+comment2.params=name
+comment2.target=java.lang.String\ lookUpNumber(java.lang.String)
+comment2.text=\r\n\ Looks\ up\ number\ of\ person\ entered.\r\n\r\n\ @param\ name\ Name\ of\ person.\r\n\ @return\ Returns\ the\ person's\ number.\r\n
+numComments=3
