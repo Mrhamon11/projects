@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=BallDemo()
+comment0.text=\r\n\ Create\ a\ BallDemo\ object.\ Creates\ a\ fresh\ canvas\ and\ makes\ it\ visible.\r\n
+comment1.params=numBalls
+comment1.target=void\ bounce(int)
+comment1.text=\r\n\ Starts\ the\ simulation.\ Uses\ a\ parameter\ to\ determine\ how\ many\ balls\ are\ created\r\n\ and\ stores\ them\ in\ an\ ArrayList.\ Then\ it\ will\ display\ the\ balls\ on\ the\ canvas\r\n\ and\ start\ an\ animation\ using\ the\ constants\ and\ variables\ defined\ in\ other\ classes.\r\n\ All\ balls\ will\ appear\ on\ the\ top\ row,\ together\ in\ a\ row.\r\n\r\n\ @param\ numBalls\ The\ number\ of\ balls\ that\ will\ be\ created\r\n
+comment2.params=numBalls
+comment2.target=void\ randomBounce(int)
+comment2.text=\r\n\ Starts\ the\ simulation\ by\ using\ a\ parameter\ to\ determine\ the\ number\ of\ balls\ created.\r\n\ It\ will\ generate\ the\ balls\ randomly\ in\ the\ left\ quarter\ of\ the\ canvas.\r\n\r\n\ @param\ numBalls\ The\ number\ of\ balls\ created\r\n
+comment3.params=
+comment3.target=java.awt.Color\ randomBallColor()
+comment3.text=\r\n\ Generates\ a\ random\ color\ from\ a\ list\ that\ is\ then\ assigned\ to\ a\ ball.\r\n\r\n\ @return\ The\ random\ color\r\n
+comment4.params=
+comment4.target=java.awt.Color\ randomBackgroundColor()
+comment4.text=\r\n\ Generates\ a\ random\ color\ from\ a\ list\ that\ is\ then\ assigned\ to\ \r\n\ the\ background\ color.\r\n\r\n\ @return\ The\ random\ color\r\n
+comment5.params=numBalls
+comment5.target=void\ boxBounce(int)
+comment5.text=\r\n\ Starts\ the\ simulation\ by\ using\ a\ parameter\ to\ determine\ the\ number\ of\ balls\ generated.\ It\ \r\n\ generates\ a\ visible\ box\ of\ a\ random\ color,\ that\ acts\ as\ the\ boundaries\ for\ the\ balls\ to\ \r\n\ bounce\ in.\ The\ balls\ will\ also\ be\ generated\ in\ a\ random\ color.\ Balls\ can\ be\ generated\ anywhere\r\n\ in\ the\ box.\r\n\r\n\ @param\ numBalls\ The\ number\ of\ balls\ generated\r\n
+numComments=6

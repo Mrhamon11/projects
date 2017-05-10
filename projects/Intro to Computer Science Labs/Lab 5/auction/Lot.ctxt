@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=number\ description
+comment0.target=Lot(int,\ java.lang.String)
+comment0.text=\r\n\ Construct\ a\ Lot,\ setting\ its\ number\ and\ description.\r\n\ @param\ number\ The\ lot\ number.\r\n\ @param\ description\ A\ description\ of\ this\ lot.\r\n
+comment1.params=
+comment1.target=java.lang.String\ toString()
+comment1.text=\r\n\ @return\ A\ string\ representation\ of\ this\ lot's\ details.\r\n
+comment2.params=
+comment2.target=int\ getNumber()
+comment2.text=\r\n\ @return\ The\ lot's\ number.\r\n
+comment3.params=
+comment3.target=java.lang.String\ getDescription()
+comment3.text=\r\n\ @return\ The\ lot's\ description.\r\n
+numComments=4

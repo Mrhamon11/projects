@@ -1,0 +1,18 @@
+{
+	"students": [
+		{"name": "Avi", 
+		"age": 22, 
+		"interests": ["Video Games", "Computers", "Reading"]
+		},
+		
+		{"name": "Itai", 
+		"age": 20, 
+		"interests": ["Video Games", "Science"]
+		},
+		
+		{"name": "Ophir", 
+		"age": 18, 
+		"interests": ["Basketball", "Hanging with Friends"]
+		}
+	]		
+}

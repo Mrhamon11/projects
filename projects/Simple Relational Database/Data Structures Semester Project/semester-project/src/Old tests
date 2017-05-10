@@ -1,0 +1,296 @@
+
+IF YOU SEE THIS, DON'T BOTHER LOOKING AT THEM BECAUSE THEY ARE OLD TESTS THAT DON'T WORK ANYMORE!
+
+    public static void testIndividualQueries(){
+        testCreateTable();
+        testInsertRow();
+        testCreateIndex();
+        testSolsTable();
+        testUniqueTable();
+        testSelect();
+        testJoin();
+        testUpdate();
+        testDelete();
+    }
+
+    public static void testCreateTable(){
+        String sqlcommand = "CREATE TABLE table1 (\n" +
+                "Int int,\n" +
+                "Doub decimal (1,1),\n" +
+                "Str varchar (10) not null,\n " +
+                "Bool boolean," +
+                "Str2 varchar (255) ,\n" +
+                "PRIMARY KEY (Int)\n" +
+                ");";
+
+        sqlcommand = sqlcommand.replaceAll("\\n", " ");
+        SQLParser sqlParser = new SQLParser();
+        try{
+            CreateTableQuery c = (CreateTableQuery) sqlParser.parse(sqlcommand);
+            CreateTable ct = new CreateTable(c, tableMap, count);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void testInsertRow() {
+        String sqlcommand = "INSERT INTO table1 (Int, Str, Bool, Doub, Str2) VALUES (5, 'true', true, 2.3, 'hello');";
+        SQLParser sqlParser = new SQLParser();
+        try{
+            InsertQuery i = (InsertQuery) sqlParser.parse(sqlcommand);
+            InsertRow ir = new InsertRow(i, tableMap, count);
+//            tableMap.get("table1").printTable();
+            //System.out.println("success");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        String sqlcommand2 = "INSERT INTO table1 (Int, Str, Bool, Doub, Str2) VALUES (6, 'next2', false, 2.4, 'sup');";
+        //SQLParser sqlParser2 = new SQLParser();
+        try{
+            InsertQuery i = (InsertQuery) sqlParser.parse(sqlcommand2);
+            InsertRow ir = new InsertRow(i, tableMap, count);
+            //tableMap.get("table1").printTable();
+            //System.out.println("success");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        String sqlcommand3 = "INSERT INTO table1 (Int, Str, Doub, Str2) VALUES (7, 'test', 2.5, 'test');";
+        //SQLParser sqlParser3 = new SQLParser();
+        try{
+            InsertQuery i = (InsertQuery) sqlParser.parse(sqlcommand3);
+            InsertRow ir = new InsertRow(i, tableMap, count);
+            //tableMap.get("table1").printTable();
+            //System.out.println("success");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        String sqlcommand4 = "INSERT INTO table1 (Int, Str, Bool, Doub, Str2) VALUES (8, 'test', true, 2.6, 'test');";
+        //SQLParser sqlParser4 = new SQLParser();
+        try{
+            InsertQuery i = (InsertQuery) sqlParser.parse(sqlcommand4);
+            InsertRow ir = new InsertRow(i, tableMap, count);
+            //tableMap.get("table1").printTable();
+            //System.out.println("success");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        tableMap.get("table1").printTable();
+    }
+
+    public static void testCreateIndex(){
+        String sqlcommand = "CREATE INDEX Str_Index on table1 (Str);";
+        SQLParser sqlParser = new SQLParser();
+        try{
+            CreateIndexQuery c = (CreateIndexQuery) sqlParser.parse(sqlcommand);
+            CreateIndex ci = new CreateIndex(c, tableMap, count);
+            //System.out.println("success");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        sqlcommand = "CREATE INDEX Bool_Index on table1 (Bool);";
+        try{
+            CreateIndexQuery c = (CreateIndexQuery) sqlParser.parse(sqlcommand);
+            CreateIndex ci = new CreateIndex(c, tableMap,count );
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void testUpdate(){
+        String sqlcommand = "UPDATE table1 SET Str = 'cool' where 'hello' = 'hello';";
+        SQLParser sqlParser = new SQLParser();
+        try{
+            UpdateQuery u = (UpdateQuery) sqlParser.parse(sqlcommand);
+            UpdateWhere uw = new UpdateWhere(u, tableMap, count);
+            tableMap.get("table1").printTable();
+//            System.out.println("");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void testDelete(){
+        String sqlcommand = "DELETE FROM table1 WHERE Int >= 6 and Int < 8;";
+        SQLParser sqlParser = new SQLParser();
+        try{
+            DeleteQuery d = (DeleteQuery) sqlParser.parse(sqlcommand);
+            DeleteWhere dw = new DeleteWhere(d, tableMap, count);
+            tableMap.get("table1").printTable();
+            System.out.println("");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void testSelect(){
+        String sqlcommand = "Select table1.Str from table1 where table1.Str = 'true';";
+        SQLParser sqlParser = new SQLParser();
+        try{
+            SelectQuery s = (SelectQuery) sqlParser.parse(sqlcommand);
+            SelectWhere sw = new SelectWhere(s, tableMap);
+            Table table = sw.tableFromConditions();
+            table.printTable();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void testUniqueTable(){
+        SQLParser sqlParser = new SQLParser();
+        String sqlcommand = "CREATE TABLE testUnique (\n" +
+                "number int unique, \n" +
+                "words varchar (255) unique,\n" +
+                "floating decimal (1,1),\n" +
+                "PRIMARY KEY (number)\n" +
+                ");";
+
+        sqlcommand = sqlcommand.replaceAll("\\n", " ");
+        try{
+            CreateTableQuery c = (CreateTableQuery) sqlParser.parse(sqlcommand);
+            CreateTable ct = new CreateTable(c, tableMap, count);
+
+            sqlcommand = "INSERT INTO testUnique (number, words, floating) VALUES (1, 'a', 1.0);";
+            InsertQuery i = (InsertQuery) sqlParser.parse(sqlcommand);
+            InsertRow ir = new InsertRow(i, tableMap, count);
+            sqlcommand = "INSERT INTO testUnique (number, words, floating) VALUES (2, 'b', 2.0);";
+            i = (InsertQuery) sqlParser.parse(sqlcommand);
+            ir = new InsertRow(i, tableMap, count);
+            sqlcommand = "INSERT INTO testUnique (number, words, floating) VALUES (3, 'c', 3.0);";
+            i = (InsertQuery) sqlParser.parse(sqlcommand);
+            ir = new InsertRow(i, tableMap, count);
+            tableMap.get("testUnique").printTable();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void testName1(){
+        SQLParser sqlParser = new SQLParser();
+        String sqlcommand = "CREATE TABLE Name1 (\n" +
+                "Name varchar (255), \n" +
+                "ID int, \n" +
+                "PRIMARY KEY (Name)\n" +
+                ");";
+
+        sqlcommand = sqlcommand.replaceAll("\\n", " ");
+        try{
+            CreateTableQuery c = (CreateTableQuery) sqlParser.parse(sqlcommand);
+            CreateTable ct = new CreateTable(c, tableMap, count);
+
+            sqlcommand = "INSERT INTO Name1 (Name, ID) VALUES ('Harry', 2);";
+            InsertQuery i = (InsertQuery) sqlParser.parse(sqlcommand);
+            InsertRow ir = new InsertRow(i, tableMap, count);
+            sqlcommand = "INSERT INTO Name1 (Name, ID) VALUES ('Sam', 5);";
+            i = (InsertQuery) sqlParser.parse(sqlcommand);
+            ir = new InsertRow(i, tableMap, count);
+//            tableMap.get("testUnique").printTable();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void testName2(){
+        SQLParser sqlParser = new SQLParser();
+        String sqlcommand = "CREATE TABLE Name2 (\n" +
+                "Name varchar (255), \n" +
+                "ID int, \n" +
+                "PRIMARY KEY (Name)\n" +
+                ");";
+
+        sqlcommand = sqlcommand.replaceAll("\\n", " ");
+        try{
+            CreateTableQuery c = (CreateTableQuery) sqlParser.parse(sqlcommand);
+            CreateTable ct = new CreateTable(c, tableMap, count);
+
+            sqlcommand = "INSERT INTO Name2 (Name, ID) VALUES ('Alex', 1);";
+            InsertQuery i = (InsertQuery) sqlParser.parse(sqlcommand);
+            InsertRow ir = new InsertRow(i, tableMap, count);
+            sqlcommand = "INSERT INTO Name2 (Name, ID) VALUES ('Bono', 3);";
+            i = (InsertQuery) sqlParser.parse(sqlcommand);
+            ir = new InsertRow(i, tableMap, count);
+//            tableMap.get("testUnique").printTable();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void testJoin(){
+        testName1();
+        testName2();
+        String sqlcommand = "Select * from Name1, Name2 where Name1.ID > Name2.ID;";
+        SQLParser sqlParser = new SQLParser();
+        try{
+            SelectQuery s = (SelectQuery) sqlParser.parse(sqlcommand);
+            SelectWhere sw = new SelectWhere(s, tableMap);
+            Table table = sw.tableFromConditions();
+            table.printTable();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void testSolsTable(){
+        SQLParser sqlParser = new SQLParser();
+        String sqlcommand = "CREATE TABLE CerealAtMyHouse (\n" +
+                "Name varchar (255), \n" +
+                "Int int,\n" +
+                "Calories int,\n" +
+                "TastyLevels int,\n" +
+                "Bracha varchar (255),\n " +
+                "Healthy boolean not null, \n" +
+                "PRIMARY KEY (Int)\n" +
+                ");";
+
+        sqlcommand = sqlcommand.replaceAll("\\n", " ");
+        try{
+            CreateTableQuery c = (CreateTableQuery) sqlParser.parse(sqlcommand);
+            CreateTable ct = new CreateTable(c, tableMap,count);
+
+            sqlcommand = "INSERT INTO CerealAtMyHouse (Name, Calories, TastyLevels, Bracha, Healthy, Int) VALUES ('Jewbilees', 25, 2, 'Mezonot', true, 9);";
+            InsertQuery i = (InsertQuery) sqlParser.parse(sqlcommand);
+            InsertRow ir = new InsertRow(i, tableMap, count);
+            sqlcommand = "INSERT INTO CerealAtMyHouse (Name, Calories, TastyLevels, Bracha,  Healthy, Int) VALUES ('Amonians', 500, 10, 'Hagefen', false, 10);";
+            i = (InsertQuery) sqlParser.parse(sqlcommand);
+            ir = new InsertRow(i, tableMap, count);
+            sqlcommand = "INSERT INTO CerealAtMyHouse (Name, Calories, TastyLevels, Bracha, Healthy, Int) VALUES ('Salvagges', 2000, 1, 'Haetz', false, 11);";
+            i = (InsertQuery) sqlParser.parse(sqlcommand);
+            ir = new InsertRow(i, tableMap, count);
+            sqlcommand = "INSERT INTO CerealAtMyHouse (Name, Calories, Bracha, Healthy, Int) VALUES ('Vlad', 550, 'Haruski', false, 12);";
+            i = (InsertQuery) sqlParser.parse(sqlcommand);
+            ir = new InsertRow(i, tableMap, count);
+            tableMap.get("CerealAtMyHouse").printTable();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void createTable(){
+        SchemaElement s1 = new SchemaElement("Int", ColumnDescription.DataType.INT, true, false, false, false, null, null, null, null, "table1");
+        SchemaElement s2 = new SchemaElement("Doub", ColumnDescription.DataType.DECIMAL, false, false, false, true, "2.36", 1, 2, null, "table1");
+        SchemaElement s3 = new SchemaElement("Str", ColumnDescription.DataType.VARCHAR, false, true, false, false, null,null, null, 5, "table1");
+        SchemaElement s4 = new SchemaElement("Bool", ColumnDescription.DataType.BOOLEAN, false, false, false, false, null,null, null, null,"table1");
+//        SchemaElement s5 = new SchemaElement("bool", DataType.BOOLEAN, false, false, false, null);
+        List<SchemaElement> schema = new LinkedList<SchemaElement>();
+        schema.add(s1);
+        schema.add(s2);
+        schema.add(s3);
+        schema.add(s4);
+//        schema.add(s5);
+
+        Value<Integer> v1 = new Value<Integer>(5);
+        Value<Double> v2 = new Value<Double>(2.31);
+        Value<String> v3 = new Value<String>("test");
+        Value<Boolean> v4 = new Value<Boolean>(true);
+        List<Value> l = new LinkedList<>();
+        l.add(v1);
+        l.add(v2);
+        l.add(v3);
+        l.add(v4);
+
+        Table table = new Table("table1", schema);
+        table.insertRow(l);
+        tableMap.put(table.getName(), table);
+    }

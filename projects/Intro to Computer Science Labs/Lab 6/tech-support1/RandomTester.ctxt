@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=
+comment0.target=RandomTester()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ RandomTester\r\n
+comment1.params=
+comment1.target=void\ printOneRandom()
+comment1.text=\r\n\ Prints\ out\ a\ random\ number\ using\ the\ Random\ class\r\n
+comment2.params=howMany
+comment2.target=void\ printMultiRandom(int)
+comment2.text=\r\n\ Prints\ out\ multiple\ random\ numbers\ using\ the\ random\ class\r\n\ @param\ howMany\ The\ number\ of\ random\ numbers\ desired\r\n
+comment3.params=
+comment3.target=int\ throwDice()
+comment3.text=\r\n\ Simulates\ a\ dice\ roll\r\n\r\n\ @return\ The\ return\ value\ of\ the\ dice\ roll\r\n
+comment4.params=
+comment4.target=java.lang.String\ getResponse()
+comment4.text=\r\n\ Will\ randomly\ return\ \ either\ "yes",\ "no",\r\n\ or\ "maybe"\r\n\ @return\ Either\ "yes",\ "no",\ or\ "maybe"\r\n
+comment5.params=responses
+comment5.target=java.lang.String\ getResponse2(java.lang.String[])
+comment5.text=\r\n\ Generates\ a\ random\ number\ based\ on\ the\ length\ of\ \r\n\ of\ a\ String\ array\ by\ using\ the\ parameter's\ values\r\n\ and\ returns\ the\ value\ of\ the\ string\ that\ is\ associated\r\n\ with\ the\ index\ of\ that\ randomly\ generated\ number.\r\n\r\n\ @param\ responses\ Values\ for\ the\ String\ Array.\r\n\ @return\ The\ random\ value\ from\ the\ String\ Array.\r\n
+comment6.params=max
+comment6.target=int\ nextIntOne(int)
+comment6.text=\r\n\ Generates\ a\ random\ number\ between\ 1\ and\ max.\r\n\r\n\ @param\ max\ The\ limit\ to\ where\ the\ random\ number\ can\r\n\ generate.\r\n\ @return\ The\ random\ number\ generated.\r\n
+comment7.params=max\ min
+comment7.target=int\ nextFromRange(int,\ int)
+comment7.text=\r\n\ Generates\ a\ random\ number\ between\ two\ values\r\n\ inclusively.\r\n\r\n\ @param\ max\ The\ upper\ limit\ that\ can\ be\ generated.\r\n\ @param\ min\ The\ lower\ limit\ that\ can\ be\ generated.\r\n\ @return\ The\ randomly\ generated\ number\ within\ the\ limit\r\n
+numComments=8
