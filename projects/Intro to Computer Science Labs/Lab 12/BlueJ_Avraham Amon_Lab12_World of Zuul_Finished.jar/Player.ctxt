@@ -1,8 +1,0 @@
-#BlueJ class context
-comment0.params=initialRoom
-comment0.target=Player(Room)
-comment0.text=\r\n\ Creates\ a\ player\ and\ place\ the\ new\ character\ in\ the\ current\ room.\ The\ \r\n\ player\ will\ also\ have\ a\ bag\ that\ will\ allow\ the\ player\ to\ carry\ items\ \r\n\ found\ in\ rooms\ throughout\ the\ game,\ and\ drop\ them\ when\ desired.\ The\ bag\r\n\ has\ a\ weight\ limit\ to\ how\ much\ can\ be\ carried.\r\n\r\n\ @param\ initialRoom\ The\ Player's\ initial\ room\r\n
-comment1.params=
-comment1.target=java.lang.String\ look()
-comment1.text=\r\n\ This\ method\ will\ return\ the\ long\ description\ of\ the\r\n\ room\ that\ the\ player\ is\ currently\ in.\ It\ will\ also\ \r\n\ tell\ the\ player\ if\ any\ other\ actors\ are\ in\ the\ room.\r\n\r\n\ @return\ The\ string\ will\ all\ of\ the\ information\r\n
-numComments=2

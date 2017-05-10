@@ -1,5 +1,0 @@
-#BlueJ class context
-comment0.params=question
-comment0.target=java.lang.String\ askCost(java.lang.String)
-comment0.text=\r\n\ Ask\ Rain\ Man\ (from\ the\ movie)\ how\ much\ something\ costs.\r\n\ To\ Rain\ Man,\ everything\ costs\ "about\ 100\ dollars".\r\n\ \r\n\ @param\ \ question\ \ A\ question\ in\ the\ form\ "How\ much\ does\ X\ cost?"\r\n\ @return\ \ \ \ \ Rain\ Man's\ estimate\ of\ the\ cost\ \r\n
-numComments=1
