@@ -1,3 +1,5 @@
+package time;
+
 import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -31,7 +33,9 @@ public class TimeFileLoader {
     }
 
     public File getFile(){
-
+        String filename = "src/time_files/" + this.hour + "/" + this.minute + ".mp3";
+        File timeFile = new File(filename);
+        return timeFile;
     }
 
     @Override
