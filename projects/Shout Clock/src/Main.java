@@ -3,6 +3,7 @@
  */
 public class Main {
     public static void main(String[] args) {
-
+        TimeFileLoader tfl = new TimeFileLoader(new TimeRetriever(true));
+        System.out.println(tfl);
     }
 }
