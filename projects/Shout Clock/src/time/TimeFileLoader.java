@@ -10,10 +10,12 @@ public class TimeFileLoader {
     private String hour;
     private String minute;
     private boolean amPm;
+    private String fileType;
 
-    public TimeFileLoader(TimeRetriever tr){
+    public TimeFileLoader(TimeRetriever tr, String fileType){
         this.fullTimeString = tr.getTimeString();
         this.amPm = tr.isAmPm();
+        this.fileType = fileType;
         findHour();
         findMinute();
     }
@@ -30,7 +32,7 @@ public class TimeFileLoader {
     }
 
     public File getFile(){
-        String filename = "src/time_files/" + this.hour + "_" + this.minute + ".mp3";
+        String filename = "src/time_files/" + this.hour + "/" + this.minute + "." + this.fileType;
         File timeFile = new File(filename);
         return timeFile;
     }
