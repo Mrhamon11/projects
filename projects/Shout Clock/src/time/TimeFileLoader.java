@@ -1,9 +1,6 @@
 package time;
 
 import java.io.File;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Created by aviam on 7/23/2017.
@@ -33,7 +30,7 @@ public class TimeFileLoader {
     }
 
     public File getFile(){
-        String filename = "src/time_files/" + this.hour + "/" + this.minute + ".mp3";
+        String filename = "src/time_files/" + this.hour + "_" + this.minute + ".mp3";
         File timeFile = new File(filename);
         return timeFile;
     }
