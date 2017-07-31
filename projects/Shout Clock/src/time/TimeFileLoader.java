@@ -1,5 +1,7 @@
 package time;
 
+import database.Database;
+
 import java.io.File;
 
 /**
@@ -10,17 +12,14 @@ public class TimeFileLoader {
     private String hour;
     private String minute;
     private boolean amPm;
-    private String fileType;
-    private boolean defaultFile;
-    private String dir;
+    private Database db;
 
-    public TimeFileLoader(TimeRetriever tr, String fileType, String packageName){
+    public TimeFileLoader(TimeRetriever tr, Database db){
         this.fullTimeString = tr.getTimeString();
         this.amPm = tr.isAmPm();
-        this.fileType = fileType;
+        this.db = db;
         findHour();
         findMinute();
-        getFolder(packageName);
     }
 
     private void findHour(){
@@ -34,19 +33,8 @@ public class TimeFileLoader {
         this.minute = split[0].substring(index + 1);
     }
 
-    private void getFolder(String packageName){
-        if(packageName == null || packageName.equals("")){
-            this.dir = "src/time_files/default/";
-        }
-        else{
-            this.dir = "src/time_files/custom/" + packageName + "/";
-        }
-    }
-
     public File getFile(){
-        String filename = this.dir + this.hour + "/" + this.minute + "." + this.fileType;
-        File timeFile = new File(filename);
-        return timeFile;
+        return this.db.getFileAtIndex(Integer.parseInt(this.hour), Integer.parseInt(this.minute));
     }
 
     @Override

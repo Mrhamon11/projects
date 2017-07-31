@@ -15,55 +15,83 @@ import time.TimeRetriever;
 public class Main{
     public static void main(String[] args) {
 
-        File[][] files = getDatabase();
+        Database db = new Database();
 
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
 
         System.out.print(">>> ");
-        while(scanner.hasNextLine()){
+        while (scanner.hasNextLine()) {
             System.out.print(">>> ");
             String input = scanner.nextLine();
-            if(input.toLowerCase().equals("what time is it?")){
-                String fileType = "wav";
-                TimeFileLoader tfl = new TimeFileLoader(new TimeRetriever(false), fileType, "AmonTest");
+            if (input.toLowerCase().equals("what time is it?")) {
+                TimeFileLoader tfl = new TimeFileLoader(new TimeRetriever(false), db);
                 File file = tfl.getFile();
 
                 new PlayAudio(file).play();
-            }
-            else if(input.equals("stop")){
+            } else if (input.equals("record")) {
+                recordHandler(scanner, db);
+                System.out.print(">>> ");
+            } else if (input.equals("change file")){
+
+            } else if (input.equals("stop")) {
                 break;
-            }
-            else{
+            } else {
                 System.out.println("I don't understand...");
                 System.out.print(">>> ");
             }
         }
-
-
-
-//        String fileType = "wav";
-//        TimeFileLoader tfl = new TimeFileLoader(new TimeRetriever(false), fileType, "AmonTest");
-//        File file = tfl.getFile();
-//        System.out.println(file);
-//
-//        new PlayAudio(file).play();
-//
-//        try{
-//            FileInputStream fis = new FileInputStream(file);
-//            Player playMP3 = new Player(fis);
-//
-//            playMP3.play();
-//
-//        }catch(Exception e){System.out.println(e);}
-
-//        File file = new Recorder("Amon", "04", "00").record();
-//        new PlayAudio(file).play();
-//        System.out.println(file.toString());
     }
 
-    public static File[][] getDatabase(){
-        Database db = new Database();
-        return db.getSetFiles();
+    public static void recordHandler(Scanner scanner, Database db){
+        System.out.print(">>> Please enter a folder name: \n>>> ");
+        String folder = scanner.nextLine().trim();
+        System.out.print(">>> Please enter the hour for new recording: \n>>> ");
+        String hour = scanner.nextLine().trim();
+        System.out.print(">>> Please enter the minute for the new recording: \n>>> ");
+        String minute = scanner.nextLine().trim();
+
+        System.out.println(">>> File will be played back after recording...");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(">>> Now recording...");
+
+        File newTimeFile = new Recorder(folder, hour, minute).record();
+
+        System.out.println(">>> Playing back recording...");
+
+        PlayAudio playAudio = new PlayAudio(newTimeFile);
+        playAudio.play();
+
+        boolean yes = yesNoVerifyer(">>> Would you like to keep this recording? Press \"y\" to keep this recording" +
+                        "and \"n\" to make a new one. \n>>> ",
+                scanner);
+
+        if(!yes){
+            recordHandler(scanner, db);
+        }else {
+            yes = yesNoVerifyer(">>> Would you like to set this file as the new file for this time? (y/n) \n>>> ", scanner);
+            if(yes) {
+                db.changeTimeFile(newTimeFile, Integer.parseInt(hour), Integer.parseInt(minute));
+            }
+        }
+    }
+
+    private static boolean yesNoVerifyer(String message, Scanner scanner){
+        System.out.print(message);
+        String yesNo = scanner.nextLine();
+        if(yesNo.equals("y")){
+            return true;
+        }
+        else if(yesNo.equals("n")){
+            return false;
+        }
+        else{
+            System.out.print("Please only enter either a \"y\" or a \"n\".");
+            return yesNoVerifyer(message, scanner);
+        }
     }
 }

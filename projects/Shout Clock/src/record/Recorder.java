@@ -15,9 +15,14 @@ public class Recorder {
     public Recorder(String packageName , String hour, String minute){
         this.format = new AudioFormat(AudioFormat.Encoding.PCM_SIGNED, 44100, 16, 2, 4, 44100, false);
         this.packageName = packageName;
-        this.hour = hour;
-        this.minute = minute;
-
+        try{
+            checkMinute(Integer.parseInt(minute));
+            this.minute = minute;
+            checkHour(Integer.parseInt(hour));
+            this.hour = hour;
+        } catch (IllegalArgumentException iae) {
+            System.out.println(iae);
+        }
     }
 
     public File record(){
@@ -53,6 +58,18 @@ public class Recorder {
         }
     }
 
+    private void checkHour(int hour){
+        if(!(hour >= 1 && hour <= 12)){
+            throw new IllegalArgumentException("hour var must be 1 <= hour <= 12");
+        }
+    }
+
+    private void checkMinute(int minute){
+        if(!(minute >= 0 && minute <= 59)){
+            throw new IllegalArgumentException("minute var must be 1 <= hour <= 12");
+        }
+    }
+
     private class Record implements Runnable{
         private volatile boolean exit = false;
 
@@ -77,7 +94,7 @@ public class Recorder {
         public void run() {
             while(!exit) {
                 AudioInputStream audioInputStream = new AudioInputStream(this.targetLine);
-                File af = new File("src/time_files/custom/" + this.packageName + "/" + this.hour
+                File af = new File(this.rootDir + this.packageName + "/" + this.hour
                         + "/" + this.minute + ".wav");
                 try {
                     AudioSystem.write(audioInputStream, AudioFileFormat.Type.WAVE, af);
