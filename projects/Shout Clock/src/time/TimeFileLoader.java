@@ -11,13 +11,16 @@ public class TimeFileLoader {
     private String minute;
     private boolean amPm;
     private String fileType;
+    private boolean defaultFile;
+    private String dir;
 
-    public TimeFileLoader(TimeRetriever tr, String fileType){
+    public TimeFileLoader(TimeRetriever tr, String fileType, String packageName){
         this.fullTimeString = tr.getTimeString();
         this.amPm = tr.isAmPm();
         this.fileType = fileType;
         findHour();
         findMinute();
+        getFolder(packageName);
     }
 
     private void findHour(){
@@ -31,8 +34,17 @@ public class TimeFileLoader {
         this.minute = split[0].substring(index + 1);
     }
 
+    private void getFolder(String packageName){
+        if(packageName == null || packageName.equals("")){
+            this.dir = "src/time_files/default/";
+        }
+        else{
+            this.dir = "src/time_files/custom/" + packageName + "/";
+        }
+    }
+
     public File getFile(){
-        String filename = "src/time_files/" + this.hour + "/" + this.minute + "." + this.fileType;
+        String filename = this.dir + this.hour + "/" + this.minute + "." + this.fileType;
         File timeFile = new File(filename);
         return timeFile;
     }
