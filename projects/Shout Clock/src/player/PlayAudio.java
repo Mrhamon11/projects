@@ -1,5 +1,7 @@
 package player;
 
+import time_file_ds.TimeFile;
+
 import javax.sound.sampled.*;
 import java.io.File;
 import java.net.URL;
@@ -10,10 +12,10 @@ import java.net.URL;
 public class PlayAudio {
     private Mixer mixer;
     private Clip clip;
-    private File file;
+    private TimeFile timeFile;
 
-    public PlayAudio(File file){
-        this.file = file;
+    public PlayAudio(TimeFile timeFile){
+        this.timeFile = timeFile;
         Mixer.Info[] mixInfo = AudioSystem.getMixerInfo();
         this.mixer = AudioSystem.getMixer(mixInfo[0]);
 
@@ -25,12 +27,12 @@ public class PlayAudio {
             e.printStackTrace();
         }
 
-        this.file = file;
+        this.timeFile = timeFile;
     }
 
     public void play(){
         try{
-            URL soundURL = this.file.toURI().toURL();
+            URL soundURL = this.timeFile.getFile().toURI().toURL();
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(soundURL);
             this.clip.open(audioInputStream);
         } catch(Exception e){

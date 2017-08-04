@@ -7,6 +7,7 @@ import java.nio.file.Files;
  * Created by aviam on 7/23/2017.
  */
 public class FilePopulate {
+
     public FilePopulate(String fileType, String packageName, boolean custom){
         String cOrD = custom ? "custom" : "default";
         packageName = custom ? "/" + packageName : "";

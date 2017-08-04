@@ -1,6 +1,7 @@
 package time;
 
 import database.Database;
+import time_file_ds.TimeFile;
 
 import java.io.File;
 
@@ -33,7 +34,7 @@ public class TimeFileLoader {
         this.minute = split[0].substring(index + 1);
     }
 
-    public File getFile(){
+    public TimeFile getTimeFile(){
         return this.db.getFileAtIndex(Integer.parseInt(this.hour), Integer.parseInt(this.minute));
     }
 

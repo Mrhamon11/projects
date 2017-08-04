@@ -8,6 +8,7 @@ import player.PlayAudio;
 import record.Recorder;
 import time.TimeFileLoader;
 import time.TimeRetriever;
+import time_file_ds.TimeFile;
 
 /**
  * Created by aviam on 7/23/2017.
@@ -18,7 +19,6 @@ public class Main{
         Database db = new Database();
 
         Scanner scanner = new Scanner(System.in);
-        boolean exit = false;
 
         System.out.print(">>> ");
         while (scanner.hasNextLine()) {
@@ -26,9 +26,9 @@ public class Main{
             String input = scanner.nextLine();
             if (input.toLowerCase().equals("what time is it?")) {
                 TimeFileLoader tfl = new TimeFileLoader(new TimeRetriever(false), db);
-                File file = tfl.getFile();
+                TimeFile timeFile = tfl.getTimeFile();
 
-                new PlayAudio(file).play();
+                new PlayAudio(timeFile).play();
             } else if (input.equals("record")) {
                 recordHandler(scanner, db);
                 System.out.print(">>> ");
@@ -59,7 +59,7 @@ public class Main{
         }
         System.out.println(">>> Now recording...");
 
-        File newTimeFile = new Recorder(folder, hour, minute).record();
+        TimeFile newTimeFile = new Recorder(folder, hour, minute).record();
 
         System.out.println(">>> Playing back recording...");
 

@@ -1,5 +1,7 @@
 package record;
 
+import time_file_ds.TimeFile;
+
 import javax.sound.sampled.*;
 import java.io.File;
 
@@ -25,7 +27,7 @@ public class Recorder {
         }
     }
 
-    public File record(){
+    public TimeFile record(){
         try{
             DataLine.Info info = new DataLine.Info(TargetDataLine.class, this.format);
             if(!AudioSystem.isLineSupported(info)){
@@ -52,7 +54,7 @@ public class Recorder {
 
             System.out.println("Ended Sound Test");
 
-            return record.getAudioFile();
+            return new TimeFile(record.getAudioFile());
         } catch (Exception e){
             return null;
         }
