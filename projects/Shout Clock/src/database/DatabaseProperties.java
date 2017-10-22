@@ -10,6 +10,7 @@ public class DatabaseProperties {
     private static final int rows = 12;
     private static final int columns = 60;
     private static final String defaultPath = "src/time_files/default/";
+    private static final String defaultParentPath = "src/time_files/";
     private static final String fileType = ".wav";
     private static final File dbFile = new File("src/database/db.txt");
 
@@ -23,6 +24,10 @@ public class DatabaseProperties {
 
     public static String getDefaultPath() {
         return defaultPath;
+    }
+
+    public static String getDefaultParentPath() {
+        return defaultParentPath;
     }
 
     public static String getFileType() {

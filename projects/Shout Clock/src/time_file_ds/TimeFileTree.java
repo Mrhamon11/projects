@@ -31,6 +31,13 @@ public class TimeFileTree {
         return height;
     }
 
+    public static void depthFirst(TimeFileTreeNode node, TimeFileToTreeItem lambda){
+        for(TimeFileTreeNode child : node.getChildren()){
+//            lambda.linkNodes(child, node);
+            depthFirst(child, lambda);
+        }
+    }
+
     public static void breadthFirst(TimeFileTreeNode node){
         LinkedBlockingQueue<TimeFileTreeNode> queue = new LinkedBlockingQueue<>();
         queue.add(node);

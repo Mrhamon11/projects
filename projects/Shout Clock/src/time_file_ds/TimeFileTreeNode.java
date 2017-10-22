@@ -44,6 +44,11 @@ public class TimeFileTreeNode implements Comparable<TimeFileTreeNode>{
         return this.getData().toString().compareTo(o.getData().toString());
     }
 
+    @Override
+    public String toString() {
+        return this.data.toString();
+    }
+
     public static void main(String[] args) {
         TimeFile t1 = new TimeFile("test/12/01.file"), t2 = new TimeFile("test/12/02.file"), t3 = new TimeFile("test/11/58.file"),
                 t4 = new TimeFile("test/custom/12 Vaders.file"), t5 = new TimeFile("test/custom/myfile.file"), t6 = new TimeFile("test/01/23.file");

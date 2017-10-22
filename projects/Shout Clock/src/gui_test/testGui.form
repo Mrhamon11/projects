@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="gui_test.testGui">
+  <grid id="27dc6" binding="mainPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="11a94" class="javax.swing.JLabel" binding="label">
+        <constraints border-constraint="North"/>
+        <properties>
+          <horizontalAlignment value="0"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Shout Clock"/>
+          <verticalTextPosition value="0"/>
+        </properties>
+      </component>
+      <grid id="fe882" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints border-constraint="Center"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="8d8bb" class="javax.swing.JButton" binding="getTimeButton">
+            <constraints/>
+            <properties>
+              <text value="Get Time"/>
+            </properties>
+          </component>
+          <component id="a03e7" class="javax.swing.JButton" binding="recordButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <text value="Record"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>

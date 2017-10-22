@@ -1,0 +1,11 @@
+logging\Deserializer$1.class
+database\Course.class
+logging\Deserializer.class
+server\Server.class
+database\Database.class
+logging\Serializer.class
+client\Client.class
+testing\ClientServerInteractionTest.class
+testing\GSONTest$1.class
+testing\ClientServerInteractionTest$1.class
+testing\GSONTest.class

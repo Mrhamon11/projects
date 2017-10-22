@@ -1,0 +1,270 @@
+{
+  "section":[
+    {
+      "com": [
+        {
+          "courseTitle": "Programming for Non-CS majors",
+          "crn": [
+            "78790"
+          ],
+          "dept": "COM"
+        },
+        {
+          "courseTitle": "Intro to Computer Science",
+          "crn": [
+            "77648"
+          ],
+          "dept": "COM"
+        },
+        {
+          "courseTitle": "Data Structures",
+          "crn": [
+            "77608"
+          ],
+          "dept": "COM"
+        },
+        {
+          "courseTitle": "Discrete Structures",
+          "crn": [
+            "77614"
+          ],
+          "dept": "COM"
+        },
+        {
+          "courseTitle": "Theory of Computation",
+          "crn": [
+            "77789"
+          ],
+          "dept": "COM"
+        },
+        {
+          "courseTitle": "Comp Org & Assemb Lang Prog",
+          "crn": [
+            "78794"
+          ],
+          "dept": "COM"
+        },
+        {
+          "courseTitle": "Algorithms",
+          "crn": [
+            "78793"
+          ],
+          "dept": "COM"
+        },
+        {
+          "courseTitle": "Programming Languages",
+          "crn": [
+            "78788"
+          ],
+          "dept": "COM"
+        },
+        {
+          "courseTitle": "Intro to Distributed Systems",
+          "crn": [
+            "78789"
+          ],
+          "dept": "COM"
+        }
+      ]
+    },
+    {
+      "mat": [
+        {
+          "courseTitle": "Precalculus",
+          "crn": [
+            "79169"
+          ],
+          "dept": "MAT"
+        },
+        {
+          "courseTitle": "Problem Seminar I",
+          "crn": [
+            "77560",
+            "77676",
+            "77561"
+          ],
+          "dept": "MAT"
+        },
+        {
+          "courseTitle": "Problem Seminar II",
+          "crn": [
+            "77597"
+          ],
+          "dept": "MAT"
+        },
+        {
+          "courseTitle": "Problem Seminar III",
+          "crn": [
+            "77562"
+          ],
+          "dept": "MAT"
+        },
+        {
+          "courseTitle": "Calculus I",
+          "crn": [
+            "77563"
+          ],
+          "dept": "MAT"
+        },
+        {
+          "courseTitle": "Calculus II",
+          "crn": [
+            "78767"
+          ],
+          "dept": "MAT"
+        },
+        {
+          "courseTitle": "Discrete Structures",
+          "crn": [
+            "77623"
+          ],
+          "dept": "MAT"
+        },{
+          "courseTitle": "Multivariable Calculus",
+          "crn": [
+            "77564"
+          ],
+          "dept": "MAT"
+        },{
+          "courseTitle": "Advanced Calculus I",
+          "crn": [
+            "77565"
+          ],
+          "dept": "MAT"
+        },
+        {
+          "courseTitle": "Linear Algebra",
+          "crn": [
+            "77613"
+          ],
+          "dept": "MAT"
+        },{
+          "courseTitle": "Probability Theory",
+          "crn": [
+            "77566"
+          ],
+          "dept": "MAT"
+        },
+        {
+          "courseTitle": "Differential Equations",
+          "crn": [
+            "79170"
+          ],
+          "dept": "MAT"
+        },
+        {
+          "courseTitle": "Network Science",
+          "crn": [
+            "79289"
+          ],
+          "dept": "MAT"
+        },
+        {
+          "courseTitle": "Math for Science & Engineering",
+          "crn": [
+            "79290"
+          ],
+          "dept": "MAT"
+        }
+      ]
+    },
+    {
+      "bio": [
+        {
+          "courseTitle": "Principles Lab",
+          "crn": [
+            "77549",
+            "77801",
+            "77551"
+          ],
+          "dept": "BIO"
+        },
+        {
+          "courseTitle": "Principles Lectures",
+          "crn": [
+            "77552"
+          ],
+          "dept": "BIO"
+        },
+        {
+          "courseTitle": "Biochemistry Lab",
+          "crn": [
+            "77553"
+          ],
+          "dept": "BIO"
+        },
+        {
+          "courseTitle": "Biochemistry Lecture",
+          "crn": [
+            "77554"
+          ],
+          "dept": "BIO"
+        },
+        {
+          "courseTitle": "Cell Structure & Function",
+          "crn": [
+            "77555"
+          ],
+          "dept": "BIO"
+        },
+        {
+          "courseTitle": "Cell Biology",
+          "crn": [
+            "77556"
+          ],
+          "dept": "BIO"
+        },
+        {
+          "courseTitle": "Genetics",
+          "crn": [
+            "77610"
+          ],
+          "dept": "BIO"
+        },
+        {
+          "courseTitle": "Psychobiology",
+          "crn": [
+            "78726"
+          ],
+          "dept": "BIO"
+        },
+        {
+          "courseTitle": "Microbiology Lab",
+          "crn": [
+            "77593",
+            "79924"
+          ],
+          "dept": "BIO"
+        },
+        {
+          "courseTitle": "Microbiology",
+          "crn": [
+            "77594"
+          ],
+          "dept": "BIO"
+        },
+        {
+          "courseTitle": "Introduction to Public Health",
+          "crn": [
+            "79282"
+          ],
+          "dept": "BIO"
+        },
+        {
+          "courseTitle": "Research in Biology",
+          "crn": [
+            "77641"
+          ],
+          "dept": "BIO"
+        },
+        {
+          "courseTitle": "Topics: Intro to Forensic Bio",
+          "crn": [
+            "78834"
+          ],
+          "dept": "BIO"
+        }
+      ]
+    }
+  ]
+}

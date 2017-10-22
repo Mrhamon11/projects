@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui_test.Controller">
+   <top>
+      <Label text="Welcome to Shout Clock!" textAlignment="CENTER" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="29.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets top="100.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+   <center>
+      <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#getTime" text="Get Time!" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#recordNewFile" text="Record">
+               <HBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </HBox>
+   </center>
+</BorderPane>

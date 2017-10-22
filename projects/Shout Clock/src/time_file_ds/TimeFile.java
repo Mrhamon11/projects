@@ -22,6 +22,10 @@ public class TimeFile {
     }
 
     private void initName(){
+        if(this.file.getName().equals("time_files")){
+            this.name = "Audio Files";
+            return;
+        }
         this.name = this.file.getName().split("\\.")[0]; //"file.type" -> "file"
         checkTimeName();
     }
@@ -53,8 +57,10 @@ public class TimeFile {
         TimeFile tf = new TimeFile("src/test/folder/file.type"); //Name -> file
         TimeFile tf2 = new TimeFile("src/test/12/03.type"); //Name -> 12:03
         TimeFile tf3 = new TimeFile("src/test/custom/01/15.type"); //Name -> 1:15
+        TimeFile tf4 = new TimeFile("src/time_files/"); //Name -> 1:15
         System.out.println(tf);
         System.out.println(tf2);
         System.out.println(tf3);
+        System.out.println(tf4);
     }
 }
